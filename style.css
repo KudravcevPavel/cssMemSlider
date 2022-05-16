@@ -1,0 +1,168 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   font-family: 'Fira Sans', sans-serif;
+   background: linear-gradient(147deg, #382a47 0%, #665c5b 74%);
+}
+
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.slider-cards {
+   display: flex;
+   justify-content: center;
+   position: absolute;
+   height: 35rem;
+   width: 100%;
+   max-width: 750px;
+   margin: auto;
+   border-radius: 2rem;
+   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.mem-card {
+   position: absolute;
+   display: flex;
+   height: 31rem;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding: 0 1rem;
+}
+
+#imgTap:checked~.mem-card {
+   padding: 0;
+   transition: .1s ease-in;
+}
+
+.mem-card .img {
+   height: 23rem;
+   flex-shrink: 0;
+   overflow: hidden;
+   border-radius: 20px;
+}
+
+#imgTap:checked~.mem-card .img {
+   height: 370px;
+   width: 850px;
+   z-index: 99;
+   margin-top: 10px;
+   transition: .3s .2s ease-in;
+}
+
+.img img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   cursor: pointer;
+   opacity: 0;
+   transition: .6s;
+}
+
+#tap-1:checked~.mem-card .img-1,
+#tap-2:checked~.mem-card .img-2,
+#tap-3:checked~.mem-card .img-3,
+#tap-4:checked~.mem-card .img-4 {
+   opacity: 1;
+   transition-delay: .2s;
+}
+
+.content {
+   padding: 0 20px 0 35px;
+   width: 530px;
+   margin-left: 50px;
+   opacity: 0;
+   transition: .6s;
+}
+
+#imgTap:checked~.mem-card .content {
+   display: none;
+}
+
+#tap-1:checked~.mem-card .content-1,
+#tap-2:checked~.mem-card .content-2,
+#tap-3:checked~.mem-card .content-3,
+#tap-4:checked~.mem-card .content-4 {
+   opacity: 1;
+   margin-left: 0px;
+   z-index: 100;
+   transition-delay: .3s;
+}
+
+
+
+.content .title {
+   font-size: 30px;
+   font-weight: 700;
+   color: #0d0925;
+   margin-top: 2rem;
+   text-align: center;
+}
+
+.radio-btn {
+   display: flex;
+   align-items: center;
+   position: absolute;
+   bottom: 3rem;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 12;
+}
+
+#imgTap:checked~.radio-btn {
+   display: none;
+}
+
+.radio-btn .tap {
+   position: relative;
+   height: 2rem;
+   width: 2rem;
+   background: #fffcfc;
+   border-radius: 1rem;
+   display: inline-flex;
+   margin: 0 0.4rem;
+   cursor: pointer;
+}
+
+.radio-btn .tap:hover {
+   background: hsla(300, 10%, 12%, 0.397);
+}
+
+
+.radio-btn .tap:before {
+   position: absolute;
+   content: '';
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: -100%;
+   background: linear-gradient(147deg, #b3a78b 0%, #686262 74%);
+   border-radius: 1rem;
+   transform: scaleX(0);
+   transition: transform 1s;
+   transform-origin: left;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+   display: none;
+}
+
+#tap-1:checked~.radio-btn .tap-1:before,
+#tap-2:checked~.radio-btn .tap-2:before,
+#tap-3:checked~.radio-btn .tap-3:before,
+#tap-4:checked~.radio-btn .tap-4:before {
+   transform: scaleX(1);
+   width: 100%;
+}
