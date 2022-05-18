@@ -22,6 +22,8 @@ body {
 .slider-cards {
    display: flex;
    justify-content: center;
+   flex-direction: column;
+   align-items: center;
    height: 35rem;
    width: 60rem;
    max-width: 46.875rem;
@@ -35,6 +37,7 @@ body {
 .mem-card {
    position: absolute;
    display: flex;
+   gap: 4rem;
    height: 31rem;
    align-items: center;
    justify-content: center;
@@ -107,7 +110,6 @@ body {
    font-size: 2rem;
    font-weight: 700;
    color: #0d0925;
-   margin-top: 3rem;
    text-align: left;
    z-index: 10;
 }
@@ -116,9 +118,9 @@ body {
    display: flex;
    align-items: flex-end;
    flex-direction: row;
-   margin: 0 0 0 12rem;
+   margin: 0 0 0 13rem;
    width: 0rem;
-   height: 29.6rem;
+   height: 29rem;
    transform: translateX(-50%);
    z-index: 20;
 }
@@ -174,4 +176,61 @@ input[type="checkbox"] {
 #tap-4:checked~.radio-btn .tap-4:before {
    transform: scaleX(1);
    width: 100%;
+}
+
+
+@media (max-width: 800px) {
+   .slider-cards {
+      width: 40rem;
+   }
+
+   .content .title {
+      order: 4;
+      margin-top: 1rem;
+
+   }
+
+   .content {
+      width: auto;
+      margin-right: 0rem;
+   }
+
+   .mem-card {
+      height: 35rem;
+      justify-content: start;
+   }
+
+   .radio-btn {
+      position: absolute;
+      z-index: 40;
+      margin-left: 0;
+      margin-right: 9rem;
+      margin-bottom: 7rem;
+      order: 3;
+   }
+
+   .img {
+      margin-top: 2rem;
+   }
+}
+
+@media (max-width: 655px) {
+   .slider-cards {
+      width: 30rem;
+   }
+
+   .img img {
+      height: 80%;
+   }
+}
+
+@media (max-width: 495px) {
+   .slider-cards {
+      width: 25em;
+   }
+
+   .img img {
+      height: 80%;
+      width: 40vh;
+   }
 }
