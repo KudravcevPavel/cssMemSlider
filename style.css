@@ -193,11 +193,14 @@ input[type="checkbox"] {
    .content {
       width: auto;
       margin-right: 0rem;
+      text-align: left;
+      align-items: start;
    }
 
    .mem-card {
       height: 35rem;
       justify-content: start;
+      align-items: flex-start;
    }
 
    .radio-btn {
@@ -233,4 +236,11 @@ input[type="checkbox"] {
       height: 80%;
       width: 40vh;
    }
+
+   .content .title {
+      order: 4;
+      margin-top: 1rem;
+      margin-right: 5rem;
+   }
+
 }
